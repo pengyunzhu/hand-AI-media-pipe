@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI 即時手勢辨識智慧控制系統（Web 版）</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>AI 即時手勢辨識智慧控制系統（Web 版）</h1>
+    <p class="description">使用 MediaPipe Hands 與瀏覽器攝影機，即時辨識手勢並顯示對應功能。</p>
+
+    <div class="status-panel">
+      <div><strong>手勢：</strong><span id="gestureText">等待中</span></div>
+      <div><strong>功能：</strong><span id="actionText">等待觸發</span></div>
+      <div><strong>FPS：</strong><span id="fpsText">0</span></div>
+      <div><strong>提示：</strong><span id="hintText">請將手放在鏡頭前，並保持手勢 1 秒。</span></div>
+    </div>
+
+    <div class="video-panel">
+      <video id="inputVideo" autoplay playsinline muted></video>
+      <canvas id="outputCanvas"></canvas>
+    </div>
+
+    <div class="notes">
+      <p>本頁使用 MediaPipe Hands Web 版，自動判斷 5 種手勢：👍、✋、✊、☝️、✌️。</p>
+      <p>若無法啟動攝影機，請確認瀏覽器已允許攝影機權限，並從本機伺服器開啟此頁面。</p>
+    </div>
+  </div>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
